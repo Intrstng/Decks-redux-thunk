@@ -1,6 +1,6 @@
 import s from './DecksList.module.css'
 import { DeckItem } from './DeckItem/DeckItem';
-import { useFetchDecks } from './hooks/useFetchDecks';
+import { useFetchDecks } from '../../../hooks/useFetchDecks';
 
 export const DecksList = () => {
     const {decks} = useFetchDecks();

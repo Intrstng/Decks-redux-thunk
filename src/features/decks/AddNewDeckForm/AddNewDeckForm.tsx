@@ -12,6 +12,7 @@ export const AddNewDeckForm = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FormValues>({
     defaultValues: {
@@ -21,7 +22,8 @@ export const AddNewDeckForm = () => {
 
   const onSubmit = (data: FormValues) => {
     console.log(data)
-    dispatch(addDeckTC(data))
+    dispatch(addDeckTC(data)).then(res => reset()) // reset() - resets input field 'react-hook-form' standard feature
+    // Здесь мы очищаем инпут только если валидация по длине прошла
   }
 
   return (
